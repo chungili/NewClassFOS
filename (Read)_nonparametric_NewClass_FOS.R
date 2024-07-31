@@ -102,20 +102,21 @@ n=length(x);n
 Rx=sort(x)
 n1=n+1
 pn=Set.Confid
+
 m=function(pn){
-  if (0<=pn && pn<0.8){370}
-  else if (0.8<=pn && pn<0.9){740}
-  else if (0.9<=pn && pn<=0.95){1110}
+  if (0.5<pn && pn<=0.7){370}
+  else if (0.7<=pn && pn<=0.8){740}
+  else if (0.8<pn && pn<=0.95){1110}
 }
 
 sigma=function(pn){
-  if (0<=pn && pn<0.8){2}
-  else if (0.8<=pn && pn<0.9){1}
-  else if (0.9<=pn && pn<=0.95){0.5}
+  if (0.5<pn && pn<=0.7){2}
+  else if (0.7<pn && pn<=0.8){1}
+  else if (0.8<pn && pn<=0.95){0.5}
 }
 
 pp0=function(n){
-  if(pn<0.6){1}
+  if(0<pn && pn<=0.5){1}
   else {pnorm(n/m(pn)-1, mean =0, sd =sigma(pn))}
 }
 
@@ -188,7 +189,7 @@ ooc.3term_FOS.p=round(100*ooc.3term_FOS/Nsim,2)
 
 
 #=====================================================================================================================================
-# 2. Nonparametric CL : Two-Sided limits, Does (2020) 
+# ( Nonparametric CL : Two-Sided limits, Does (2020))
 # ===================================================================================================================================
 
 out <- nptol.int(x = x, alpha = 1-Set.Confid, P = 1-2*alpha, side = 2,
