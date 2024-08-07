@@ -57,9 +57,9 @@ Rx=sort(x)
 n1=n+1
 
 Pn_FOS=function(n){
-  if (n>1850) {0.95
-  } else if (n>1480) {0.90
-  } else if (n>1110) {0.80
+  if (n>1851) {0.95
+  } else if (n>1481) {0.90
+  } else if (n>1111) {0.80
   } else if (n>740)  {0.70
   } else if (n>370)  {0.50
   } else {0.3}
@@ -106,7 +106,7 @@ pn=Set.Confid
 m=function(pn){
   if (0.5<pn && pn<=0.7){370}
   else if (0.7<=pn && pn<=0.8){740}
-  else if (0.8<pn && pn<=0.95){1110}
+  else if (0.8<pn && pn<=0.95){1111}
 }
 
 sigma=function(pn){
