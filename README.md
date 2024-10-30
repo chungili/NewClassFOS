@@ -7,6 +7,11 @@ for(i in 1:length(packageName)) {
     install.packages(packageName[i])
   }
 }
+lapply(packageName, require, character.only = TRUE)
+library(dfphase1)
+library(DescTools)
+library(moments)
+library(tolerance)
 ```
 
 # aaa
