@@ -41,3 +41,9 @@ EPC_FOS(x1 , alpha = 0.0027)
 ad_FOS(x1, alpha = 0.0027, pn = 0.9)
 Terms3_FOS(x1, alpha = 0.0027, pn = 0.9)
 ```
+
+# Fine-tuning Ad-AF hyperparameters
+
+```{r}
+R code here
+```
