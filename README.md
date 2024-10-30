@@ -14,4 +14,23 @@ library(moments)
 library(tolerance)
 ```
 
-# aaa
+# Data Preprocessing
+
+```{r}
+dt = read.csv("uci-secom.csv", header = F)
+prepro = function(x){
+  #filters out the missing values
+  xfull = x[!is.na(x)]
+  xtrim = DescTools::Trim(xfull, trim = 0.01)
+  xfinal = xtrim
+  return(xfinal)
+}
+x1 = prepro(dt$V2)[1:61]
+x2 = prepro(dt$V25)[1:379] 
+x3 = prepro(dt$V158)[1:751]
+x4 = prepro(dt$V190)[1:1536]
+```
+
+# Calcuate EPC Control Limits
+
+In cdoe.R, we proposed three methods for calculating EPC contorl limits.
