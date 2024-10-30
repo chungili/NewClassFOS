@@ -33,4 +33,11 @@ x4 = prepro(dt$V190)[1:1536]
 
 # Calcuate EPC Control Limits
 
-In cdoe.R, we proposed three methods for calculating EPC contorl limits.
+In cdoe.R, we provide the implements of the three methods, Class FOS, adaptive FOS, and 3-term FOS, for calculating EPC control limits.
+For example, we would like to Calcuate the EPC control limits for variable `x1`
+```{r}
+# Class FOS
+EPC_FOS(x1)
+ad_FOS(x1)
+Terms3_FOS(x1)
+```
