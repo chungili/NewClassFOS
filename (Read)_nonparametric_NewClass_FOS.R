@@ -31,6 +31,7 @@ FOS = function(x, alpha = 0.0027){
   return(limits)
 }
 
+
 FOS_ad = function(x, alpha = 0.0027, pn = 0.9){
   n = length(x)
   Rx <- sort(x)
@@ -69,6 +70,7 @@ FOS_ad = function(x, alpha = 0.0027, pn = 0.9){
   limits = cbind(LCL.Q, UCL.Q)
   return(limits)
 }
+
 
 FOS_3terms <- function(x, alpha = 0.0027, pn = 0.9){
   n = length(x)
