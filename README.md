@@ -13,11 +13,18 @@ library(DescTools)
 library(moments)
 library(tolerance)
 ```
+# Read Data
+
+```{r}
+# semiconductor manufacturing process data
+dt_secom = read.csv("uci-secom.csv", header = F)
+# Sonar data
+dt_sonar = read.csv("sonar.csv", header = F)
+```
 
 # Data Preprocessing
 
 ```{r}
-dt = read.csv("uci-secom.csv", header = F)
 prepro = function(x){
   #filters out the missing values
   xfull = x[!is.na(x)]
@@ -25,10 +32,11 @@ prepro = function(x){
   xfinal = xtrim
   return(xfinal)
 }
-x1 = prepro(dt$V2)[1:61]
-x2 = prepro(dt$V25)[1:379] 
-x3 = prepro(dt$V158)[1:751]
-x4 = prepro(dt$V190)[1:1536]
+x1 = prepro(dt_secom$V2)[1:61]
+x2 = prepro(dt_secom$V25)[1:379] 
+x3 = prepro(dt_secom$V158)[1:751]
+x4 = prepro(dt_secom$V190)[1:1536]
+x6 = prepro(dt_sonar$V6)[1:200]
 ```
 
 # Calcuate EPC Control Limits
@@ -37,9 +45,17 @@ In cdoe.R, we provide the implements of the three methods, Class FOS, adaptive F
 For example, we would like to calcuate the EPC control limits for variable `x1`.
 
 ```{r}
-EPC_FOS(x1 , alpha = 0.0027)
-ad_FOS(x1, alpha = 0.0027, pn = 0.9)
-Terms3_FOS(x1, alpha = 0.0027, pn = 0.9)
+FOS(x1 , alpha = 0.0027)
+FOS_ad(x1, alpha = 0.0027, pn = 0.9)
+FOS_3terms(x1, alpha = 0.0027, pn = 0.9)
+```
+
+Moreover, we would like to calcuate the EPC control limits for variable `x6` in Sonar dataset.
+
+```{r}
+FOS(x6 , alpha = 0.0027)
+FOS_ad(x6, alpha = 0.0027, pn = 0.9)
+FOS_3terms(x6, alpha = 0.0027, pn = 0.9)
 ```
 
 # Fine-tuning Ad-AF hyperparameters
