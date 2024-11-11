@@ -48,17 +48,17 @@ In code.R, we provide the implements of the three methods, Class FOS, adaptive F
 The correspoding R functions are `FOS()`, `FOS_ad()` and `FOS_3terms()`. For example, we would like to calcuate the EPC control limits for variable `x1`.
 
 ```{r}
-FOS(x1 , alpha = 0.0027)
-FOS_ad(x1, alpha = 0.0027, pn = 0.9)
-FOS_3terms(x1, alpha = 0.0027, pn = 0.9)
+FOS(x1, alpha = 0.0027)
+FOS_ad(x1, alpha = 0.0027, pn = 0.3)
+FOS_3terms(x1, alpha = 0.0027, pn = 0.3)
 ```
 
 Moreover, we would like to calcuate the EPC control limits for variable `x6` in Sonar dataset.
 
 ```{r}
-FOS(x6 , alpha = 0.0027)
-FOS_ad(x6, alpha = 0.0027, pn = 0.9)
-FOS_3terms(x6, alpha = 0.0027, pn = 0.9)
+FOS(x6, alpha = 0.0027)
+FOS_ad(x6, alpha = 0.0027, pn = 0.3)
+FOS_3terms(x6, alpha = 0.0027, pn = 0.3)
 ```
 
 # Fine-tuning Ad-AF hyperparameters
