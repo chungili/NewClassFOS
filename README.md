@@ -13,7 +13,7 @@ library(DescTools)
 library(moments)
 library(tolerance)
 ```
-# Read Data
+# Read Dataset
 
 ```{r}
 # semiconductor manufacturing process data
