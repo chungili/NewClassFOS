@@ -25,11 +25,14 @@ dt_sonar = read.csv("sonar.csv", header = F)
 # Data Preprocessing
 
 ```{r}
-prepro = function(x){
+prepro = function(x, trim=TRUE){
   #filters out the missing values
   xfull = x[!is.na(x)]
-  xtrim = DescTools::Trim(xfull, trim = 0.01)
-  xfinal = xtrim
+  if (trim) {
+    xfinal = DescTools::Trim(xfull, trim = 0.01)
+  } else{
+    xfinal = xfull
+  }
   return(xfinal)
 }
 x1 = prepro(dt_secom$V2)[1:61]
