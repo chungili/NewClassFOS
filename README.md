@@ -72,7 +72,7 @@ Moreover, we would like to find the optiomal hyperparameters for the t distribut
 ```{r}
 FindTune(n = 370, pn = 0.6, dist="t")
 ```
-Suppose that we have tranning and testing dataset with sample size 370.
+Suppose that we have a traning and testing dataset with a sample size 370.
 We would like to find the optiomal hyperparameters for the desired nominal coverage 0.7.
 ```{r}
 Train = matrix(rnorm(10000*370), nrow = 10000 )
