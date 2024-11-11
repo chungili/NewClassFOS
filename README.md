@@ -42,7 +42,7 @@ x6 = prepro(dt_sonar$V6)[1:200]
 # Calcuate EPC Control Limits
 
 In cdoe.R, we provide the implements of the three methods, Class FOS, adaptive FOS, and 3-term FOS, for calculating EPC control limits.
-For example, we would like to calcuate the EPC control limits for variable `x1`.
+The correspoding R functions are `FOS()`, `FOS_ad()` and `FOS_3terms()`. For example, we would like to calcuate the EPC control limits for variable `x1`.
 
 ```{r}
 FOS(x1 , alpha = 0.0027)
