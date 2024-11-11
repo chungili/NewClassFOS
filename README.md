@@ -63,6 +63,8 @@ FOS_3terms(x6, alpha = 0.0027, pn = 0.3)
 
 # Fine-tuning Ad-AF hyperparameters
 
+In FineTune.R, we provide the implements of the fine-tune producer. For example, we would like to find the optiomal hyperparameters.
+
 ```{r}
 R code here
 ```
