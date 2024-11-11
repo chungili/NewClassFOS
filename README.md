@@ -1,7 +1,7 @@
 # Install the packages
 
 ```{r}
-packageName <- c("dfphase1", "DescTools", "moments", "tolerance")
+packageName <- c("dfphase1", "DescTools", "moments", "tolerance", "doParallel", "foreach")
 for(i in 1:length(packageName)) {
   if(!(packageName[i] %in% rownames(installed.packages()))) {
     install.packages(packageName[i])
