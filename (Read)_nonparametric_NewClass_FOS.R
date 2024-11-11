@@ -19,8 +19,8 @@ FOS = function(x, alpha = 0.0027){
       Rx[n]-(Rx[n]-Rx[n-1])*log(n1*(1-u))
     }
   }
-  fun1 = function(r){pbeta(alpha, r, n-r+1)-(1+Pn_FOS(n))/2}
-  fun2 = function(r){pbeta(1-alpha, r, n-r+1)-(1-Pn_FOS(n))/2}
+  fun1 = function(r){pbeta(alpha/2, r, n-r+1)-(1+Pn_FOS(n))/2}
+  fun2 = function(r){pbeta(1-alpha/2, r, n-r+1)-(1-Pn_FOS(n))/2}
   kl = uniroot(fun1, c(0, n+1))$root
   ku = uniroot(fun2, c(0, n+1))$root
   ur = kl/(n+1)
@@ -59,8 +59,8 @@ FOS_ad = function(x, alpha = 0.0027, pn = 0.9){
       Rx[n]-(Rx[n]-Rx[n-1])*log(pp0(n)*n1*(1-u))+(Rx[n]-Rx[n-1])*(log(pp0(n)*n1*(1-u)))^2
     }
   }
-  fun1 = function(r){pbeta(alpha, r, n-r+1)-(1+pn)/2}
-  fun2 = function(r){pbeta(1-alpha,r, n-r+1)-(1-pn)/2}
+  fun1 = function(r){pbeta(alpha/2, r, n-r+1)-(1+pn)/2}
+  fun2 = function(r){pbeta(1-alpha/2,r, n-r+1)-(1-pn)/2}
   kl <- uniroot(fun1,c(0, n+1))$root
   ku <- uniroot(fun2,c(0, n+1))$root
   ur = kl/(n+1)
@@ -85,8 +85,8 @@ FOS_3terms <- function(x, alpha = 0.0027, pn = 0.9){
       Rx[n]-(Rx[n]-Rx[n-1])*log(n1*(1-u))+(Rx[n]-Rx[n-1])*(log(n1*(1-u)))^2-(Rx[n]-Rx[n-1])*(log(n1*(1-u)))^3
     }
   }
-  fun1 = function(r){pbeta(alpha, r, n-r+1)-(1+pn)/2}
-  fun2 = function(r){pbeta(1-alpha, r, n-r+1)-(1-pn)/2}
+  fun1 = function(r){pbeta(alpha/2, r, n-r+1)-(1+pn)/2}
+  fun2 = function(r){pbeta(1-alpha/2, r, n-r+1)-(1-pn)/2}
   kl = uniroot(fun1,c(0, n+1))$root
   ku = uniroot(fun2,c(0, n+1))$root
   ur = kl/(n+1)
