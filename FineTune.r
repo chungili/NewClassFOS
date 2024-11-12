@@ -1,4 +1,4 @@
-FinedTune = function(Sd = c(0.5, 1, 2), m = c(370, 740, 1111), n, pn, 
+FineTune = function(Sd = c(0.5, 1, 2), m = c(370, 740, 1111), n, pn, 
                     dist = c("normal", "chisq", "t", "beta", "lnrom"), 
                     alpha = 0.0027, B = 10000){
   n.m = length(m)
@@ -56,7 +56,7 @@ FinedTune = function(Sd = c(0.5, 1, 2), m = c(370, 740, 1111), n, pn,
   return(list(Opt.m = m[loc[2]], Opt.sd = Sd[loc[1]]) )
 }
 
-FindTuneWithData = function(Sd = c(0.5, 1, 2), m = c(370, 740, 1111), pn, Train, Test,
+FineTuneWithData = function(Sd = c(0.5, 1, 2), m = c(370, 740, 1111), pn, Train, Test,
                     alpha = 0.0027, B = 10000){
   n = dim(Train)[2]
   n.m = length(m)
