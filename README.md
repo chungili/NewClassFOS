@@ -66,16 +66,16 @@ FOS_3terms(x6, alpha = 0.0027, pn = 0.3)
 In FineTune.R, we provide the implements of the fine-tune producer. For example, we would like to find the optiomal hyperparameters for the normal distribution with sample size 370 and the desired nominal coverage 0.6.
 
 ```{r}
-FindTune(n = 370, pn = 0.6, dist="normal")
+FineTune(n = 370, pn = 0.6, dist="normal")
 ```
 Moreover, we would like to find the optiomal hyperparameters for the t distribution with sample size 370 and the desired nominal coverage 0.6.
 ```{r}
-FindTune(n = 370, pn = 0.6, dist="t")
+FineTune(n = 370, pn = 0.6, dist="t")
 ```
 Suppose that we have a traning and testing dataset with a sample size 370.
 We would like to find the optiomal hyperparameters for the desired nominal coverage 0.7.
 ```{r}
 Train = matrix(rnorm(10000*370), nrow = 10000 )
 Test = matrix(rnorm(10000*370), nrow = 10000 )
-FindTuneWithData(Train = Train, Test=Test, pn = 0.7)
+FineTuneWithData(Train = Train, Test=Test, pn = 0.7)
 ```
